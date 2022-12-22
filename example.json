@@ -1,0 +1,15 @@
+{
+	"parent": {
+		"subval" : 1,
+		"subset" : {
+			"subsetval": 4,
+			"subsetstring": "im a nested string"
+		}
+	},
+	"root" : "i'm at the root",
+	"array": [
+		1,
+		2,
+		3
+	]
+}
