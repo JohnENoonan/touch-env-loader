@@ -71,6 +71,14 @@ class Ext:
 				raise err
 		else:
 			print("process as .env file")
+			env_out = op("env_env_edit")
+			env_out.clear()
+			lines = dat.text.split('\n')
+			for line in lines:
+				parts = line.split(str(parent().par.Delimiter), 1)
+				if parts != ['']:
+					env_out.appendRow(parts)
+
 		
 		op("switch1").par.index = is_json_int
 		print("reloaded environment file")
