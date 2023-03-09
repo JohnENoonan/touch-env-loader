@@ -11,7 +11,7 @@ op.env.Exists("VARIABLE_NAME") # returns boolean
 ```
 
 ### Callbacks
-Callbacks are available from the docked dat. The function `processEnv` will be called on every update to the script or to the input evn file. You can edit the dat in place and make any changes needed.
+Callbacks are available from the docked dat. The function `processEnv` will be called on every update to the script or to the input env file. You can edit the dat in place and make any changes needed.
 
 ### JSON Syntax
 Loading a json file supports all types except for arrays. In the event of an array it will be processed as a string. For example
