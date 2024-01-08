@@ -28,12 +28,15 @@ class Ext:
 		return self.env[str(key), 0] is not None
 
 	def CreateCallbacks(self):
-		print(self.ownerComp)
-		new_callback_dat = self.ownerComp.parent().copy(op("default_callbacks"), name = f"{self.ownerComp.name}_callbacks")
-		new_callback_dat.nodeX = self.ownerComp.nodeX
-		new_callback_dat.nodeY = self.ownerComp.nodeY - 150
-		new_callback_dat.dock = self.ownerComp
-		self.ownerComp.par.Callbackdat = new_callback_dat
+		callback_name = f"{self.ownerComp.name}_callbacks"
+		if len(self.ownerComp.parent().findChildren(name=callback_name)) > 0:
+			print("callback already exists")
+		else:
+			new_callback_dat = self.ownerComp.parent().copy(op("default_callbacks"), name = callback_name)
+			new_callback_dat.nodeX = self.ownerComp.nodeX
+			new_callback_dat.nodeY = self.ownerComp.nodeY - 150
+			new_callback_dat.dock = self.ownerComp
+			self.ownerComp.par.Callbackdat = new_callback_dat
 
 	@staticmethod
 	def flatten(d, parent_key='', sep='_'):
